@@ -1,0 +1,337 @@
+<config>
+
+<!-- ************************************************************** Mod Info **********************************************************************  -->
+<!--
+The purpose of this mod is to allow the player to make changes to the animal spawn groups for all of the different biomes in the game.  Running this mod without making any changes to the lines below will load up the default vanilla settings for the game.
+
+It is highly recommended to use a xml editting program (I use the Notepad++ free program) to edit the file as you can easily see sections of the code that are commented out.
+-->
+
+<!-- ************************************************************** Directions **********************************************************************  -->
+<!--
+Non vanilla entities are currently commented out for each spawn group and the probabilities are currently vanilla settings.
+
+To change probabilities:
+
+Simply edit the number that follows the entity being spawned.  For example, in WildGameForest, change 5 to 10 at the animalRabbit line if you want to increase the spawn chance to 10%.  When you finish adjusting the spawn rates of the animal, change the
+probability for none so that the total number in that group equals 100 - so in this example, 10+5 for the Chicken and Rabit means we need to change none to 85 to get 100.
+
+Note:  The total does not have to equal 100, but it is easier to determine the rate of spawning if the numbers add up to 100.  The game calculates spawn chance based on the entitie's probability divided by the total number - 10/100 is the same as 20/200.
+
+
+To change which animals spawn in the group:
+
+To add or remove animals, you will need to make use of the comments symbols.  Any animal you want to add, you need to add to the list at the start of the entitygroup that is not commented out.  To remove entities, move them so that they are inbetween the
+comments and they won't be loaded up.  You can also simply delete any entities you want, but you will have to track down the entity name if you want to add them back later.  As an example, if you want to add the hostile chicken to the wild game forest spawn group,
+simply cut and past that line below animalChicken.  Remember to adjust your probabilities afterwards.
+
+To remnove the entity, either delete the line or cut and paste the entity line so that is after the comments start command.
+
+I have added all the possible animal entities to each group to make it easier to modify each group.  These entities are commented out so it doesn't change the vanilla settings until you want to modify them.  This even includes the dreaded hostile chicken.
+
+-->
+
+<!-- ******************  Pine Forest Spawning  *************  -->
+<!-- Day spawns  -->
+<remove xpath="//entitygroup[@name='WildGameForest']"/>
+
+	<append xpath="/entitygroups">
+	<entitygroup name="WildGameForest">
+		animalRabbit, 5
+		animalChicken, 5
+<!--
+		animalDoe, 5
+		animalStag,1
+		animalSnake, 10		
+		animalBoar, 5		
+		animalZombieVulture, 10
+		animalCoyote, 5		
+		animalWolf, 10
+		animalMountainLion, 5		
+		animalBear, 5
+		animalBearSmall, 5
+		animalDireWolf, 5
+		animalZombieDog, 5
+		animalChickenHostile, 5
+		animalZombieBear, 20
+-->		
+		none, 90
+	</entitygroup>
+	</append>
+
+<!-- Night spawns  -->
+<remove xpath="//entitygroup[@name='WildGameForestNight']"/>
+
+	<append xpath="/entitygroups">
+	<entitygroup name="WildGameForestNight">
+		animalDoe, 5
+		animalStag,1
+<!--
+		animalRabbit, 5
+		animalChicken, 5
+		animalSnake, 10		
+		animalBoar, 5		
+		animalZombieVulture, 10
+		animalCoyote, 5		
+		animalWolf, 10
+		animalMountainLion, 5		
+		animalBear, 5
+		animalBearSmall, 5
+		animalDireWolf, 5
+		animalZombieDog, 5
+		animalChickenHostile, 5
+		animalZombieBear, 20
+-->		
+		none, 94
+	</entitygroup>
+	</append>
+
+<!-- Enemy spawns  -->
+<remove xpath="//entitygroup[@name='EnemyAnimalsForest']"/>
+
+	<append xpath="/entitygroups">
+	<entitygroup name="EnemyAnimalsForest">
+		animalSnake, 10
+<!--
+		animalRabbit, 5
+		animalChicken, 5
+		animalDoe, 5
+		animalStag,1	
+		animalBoar, 5		
+		animalZombieVulture, 10
+		animalCoyote, 5		
+		animalWolf, 10
+		animalMountainLion, 5		
+		animalBear, 5
+		animalBearSmall, 5
+		animalDireWolf, 5
+		animalZombieDog, 5
+		animalChickenHostile, 5
+		animalZombieBear, 20
+-->		
+		none, 90
+	</entitygroup>
+	</append>
+	
+<!-- ******************  Burnt Forest Spawning  *************  -->
+<!-- Day spawns  -->	
+<remove xpath="//entitygroup[@name='EnemyAnimalsBurntForestAny']"/>
+
+	<append xpath="/entitygroups">
+	<entitygroup name="EnemyAnimalsBurntForestAny">
+		animalSnake, 10
+		animalBoar, 5
+<!--
+		animalRabbit, 5
+		animalChicken, 5
+		animalDoe, 5
+		animalStag,1	
+		animalZombieVulture, 10
+		animalCoyote, 5		
+		animalWolf, 10
+		animalMountainLion, 5		
+		animalBear, 5
+		animalBearSmall, 5
+		animalDireWolf, 5
+		animalZombieDog, 5
+		animalChickenHostile, 5
+		animalZombieBear, 20
+-->		
+		none, 85
+	</entitygroup>
+	</append>
+
+<!-- Night spawns  -->	
+<remove xpath="//entitygroup[@name='EnemyAnimalsBurntForestNight']"/>
+
+	<append xpath="/entitygroups">
+	<entitygroup name="EnemyAnimalsBurntForestNight">
+		animalZombieVulture, 10
+		animalCoyote, 5
+<!--
+		animalRabbit, 5
+		animalChicken, 5
+		animalDoe, 5
+		animalStag,1
+		animalSnake, 10		
+		animalBoar, 5			
+		animalWolf, 10
+		animalMountainLion, 5		
+		animalBear, 5
+		animalBearSmall, 5
+		animalDireWolf, 5
+		animalZombieDog, 5
+		animalChickenHostile, 5
+		animalZombieBear, 20
+-->		
+		none, 85
+	</entitygroup>
+	</append>
+	
+<!-- ******************  Desert Spawning  *************  -->
+<!-- Day spawns  -->	
+<remove xpath="//entitygroup[@name='EnemyAnimalsDesert']"/>
+
+	<append xpath="/entitygroups">
+	<entitygroup name="EnemyAnimalsDesert">
+		animalCoyote, 20
+		animalZombieVulture, 20
+		animalSnake, 5
+<!--
+		animalRabbit, 5
+		animalChicken, 5
+		animalDoe, 5
+		animalStag,1	
+		animalBoar, 5			
+		animalWolf, 10
+		animalMountainLion, 5		
+		animalBear, 5
+		animalBearSmall, 5
+		animalDireWolf, 5
+		animalZombieDog, 5
+		animalChickenHostile, 5
+		animalZombieBear, 20
+-->		
+		none, 55
+	</entitygroup>
+	</append>
+
+<!-- Night spawns  -->	
+<remove xpath="//entitygroup[@name='EnemyAnimalsDesertNight']"/>
+
+	<append xpath="/entitygroups">
+	<entitygroup name="EnemyAnimalsDesertNight">
+		animalBoar, 5
+		animalWolf, 10
+		animalMountainLion, 5
+<!--
+		animalRabbit, 5
+		animalChicken, 5
+		animalDoe, 5
+		animalStag,1
+		animalSnake, 10			
+		animalZombieVulture, 10
+		animalCoyote, 5			
+		animalBear, 5
+		animalBearSmall, 5
+		animalDireWolf, 5
+		animalZombieDog, 5
+		animalChickenHostile, 5
+		animalZombieBear, 20
+-->		
+		none, 80
+	</entitygroup>
+	</append>
+
+<!-- ******************  Snow Spawning  *************  -->
+<!-- Day spawns  -->	
+<remove xpath="//entitygroup[@name='EnemyAnimalsSnow']"/>
+
+	<append xpath="/entitygroups">
+	<entitygroup name="EnemyAnimalsSnow">
+		animalMountainLion, 10
+		animalWolf, 5
+		animalBear, 5
+		animalBearSmall, 5
+<!--
+		animalRabbit, 5
+		animalChicken, 5
+		animalDoe, 5
+		animalStag,1
+		animalSnake, 10		
+		animalBoar, 5		
+		animalZombieVulture, 10
+		animalCoyote, 5				
+		animalDireWolf, 5
+		animalZombieDog, 5
+		animalChickenHostile, 5
+		animalZombieBear, 20
+-->		
+		none, 75
+	</entitygroup>
+	</append>
+
+<!-- Night spawns  -->	
+<remove xpath="//entitygroup[@name='EnemyAnimalsSnowNight']"/>
+
+	<append xpath="/entitygroups">
+	<entitygroup name="EnemyAnimalsSnowNight">
+		animalDireWolf, 5
+		animalZombieDog, 5
+<!--
+		animalRabbit, 5
+		animalChicken, 5
+		animalDoe, 5
+		animalStag,1
+		animalSnake, 10		
+		animalBoar, 5		
+		animalZombieVulture, 10
+		animalCoyote, 5		
+		animalWolf, 10
+		animalMountainLion, 5		
+		animalBear, 5
+		animalBearSmall, 5
+		animalChickenHostile, 5
+		animalZombieBear, 20
+-->		
+		none, 90
+	</entitygroup>
+	</append>
+
+
+<!-- ******************  Wasteland Spawning  *************  -->
+<!-- Day spawns  -->	
+<remove xpath="//entitygroup[@name='EnemyAnimalsWasteland']"/>
+
+	<append xpath="/entitygroups">
+	<entitygroup name="EnemyAnimalsWasteland">
+		animalSnake, 20
+		animalZombieVulture, 30
+		animalZombieDog, 30
+		animalBear, 10
+		animalBearSmall, 10
+<!--
+		animalRabbit, 5
+		animalChicken, 5
+		animalDoe, 5
+		animalStag,1	
+		animalBoar, 5		
+		animalCoyote, 5		
+		animalWolf, 10
+		animalMountainLion, 5		
+		animalDireWolf, 5
+		animalChickenHostile, 5
+		animalZombieBear, 20
+-->		
+	</entitygroup>
+	</append>
+
+<!-- Night spawns  -->	
+<remove xpath="//entitygroup[@name='EnemyAnimalsWastelandNight']"/>
+
+	<append xpath="/entitygroups">
+	<entitygroup name="EnemyAnimalsWastelandNight">
+		animalDireWolf, 20
+		animalZombieBear, 20
+<!--
+		animalRabbit, 5
+		animalChicken, 5
+		animalDoe, 5
+		animalStag,1
+		animalSnake, 10		
+		animalBoar, 5		
+		animalZombieVulture, 10
+		animalCoyote, 5		
+		animalWolf, 10
+		animalMountainLion, 5		
+		animalBear, 5
+		animalBearSmall, 5
+		animalZombieDog, 5
+		animalChickenHostile, 5
+-->		
+		none, 60
+	</entitygroup>
+	</append>
+
+	
+</config>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="BFT2020_ChangingAnimalSpawning" />
+	<DisplayName value="BFT Changing Animal Spawning" />
+	<Description value="Simple mod to allow user to change animal spawn groups - both what spawns in them and how often" />
+	<Author value="BFT2020" />
+	<Version value="1.1.0.1" />
+	<Website value="" />
+	<SkipWithAntiCheat value="false" />
+</xml>
